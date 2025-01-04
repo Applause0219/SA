@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 車牌辨識成功</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #b3b0ab;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        nav a.selected {
+            background-color: #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .left-section, .right-section {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+
+        .photo-upload {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #999999;
+            background-color: #f9f9f9;
+            border: 2px dashed #cccccc;
+            border-radius: 8px;
+            margin-top: 5px; /* 保持間隔 */
+        }
+
+        .photo-upload img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: green;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #44403a;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #5a554f;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="ai.html" class="selected">辨識</a>
+        <a href="index.html">人工辨識</a>
+        <a href="cross.html">辨識紀錄</a>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+           
+            <div class="left-section">
+                <div class="form-group">
+                    <label for="photo-upload">違規照片：</label>
+                    <div class="photo-upload" id="photo-upload">
+                        <img src="example.jpg" alt="照片">
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="right-section">
+                <div id="result">辨識成功！</div>
+                <div id="info">
+                    <p>車牌號碼：<span id="plate-number">ABC-1234</span></p>
+                    <p>違規地點：<span id="violation-location">台北市中正區</span></p>
+                    <p>違規時間：<span id="violation-time">2025/01/01 12:34</span></p>
+                    <p>違規速度：<span id="violation-speed">80</span> km/h</p>
+                    <p>車輛速限：<span id="speed-limit">60</span> km/h</p>
+                </div>
+                <button type="button" onclick="window.location.href='cross.html'">送出紀錄</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

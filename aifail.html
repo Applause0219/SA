@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 車牌辨識失敗</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #b3b0ab;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        nav a.selected {
+            background-color: #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .left-section, .right-section {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .photo-upload {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #999999;
+            background-color: #f9f9f9;
+            border: 2px dashed #cccccc;
+            border-radius: 8px;
+        }
+
+        .photo-upload img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: red;
+        }
+
+        #reason {
+            height: 250px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff5f5;
+            border: 1px solid #f5c2c2;
+            border-radius: 5px;
+            color: #a94442;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #44403a;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a554f;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="ai.html"class="selected">辨識</a>
+        <a href="index.html" >人工辨識</a>
+        <a href="cross.html">辨識紀錄</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="content">
+            <!-- 左側區域：照片預覽 -->
+            <div class="left-section">
+                <div class="form-group">
+                    <label for="photo-upload">違規照片：</label>
+                    <div class="photo-upload" id="photo-upload">
+                        <img src="example.jpg" alt="照片">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右側區域：辨識失敗訊息 -->
+            <div class="right-section">
+                <div id="result">辨識失敗！</div>
+                <div id="reason">
+                    <strong>失敗原因：</strong><br>
+                    1. 照片畫質過低，無法清晰辨識車牌。<br>
+                    2. 車牌被遮擋或不完整。<br>
+                    3. 照片中無法檢測到車牌區域。
+                </div>
+                <button type="button" onclick="window.location.href='index.html'">進入人工辨識</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

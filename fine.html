@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罰單</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .ticket-container {
+            background-color: #424242; /* 深灰色背景 */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e0e0e0; /* 淺灰色文字 */
+        }
+
+        .ticket {
+            text-align: center;
+        }
+
+        .plate-image {
+            width: 100%;
+            max-width: 400px; /* 確保圖片不會超過容器 */
+            height: 180px;
+            margin: 0 auto 20px;
+            border: 2px solid #616161; /* 深灰色邊框 */
+            border-radius: 5px;
+            aspect-ratio: 4 / 1; /* 設定寬高比為 4:1 */
+            object-fit: cover; /* 保持圖片比例填滿框格 */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #616161; /* 深灰色邊框 */
+        }
+
+        th {
+            background-color: #616161; /* 深灰色表頭 */
+            color: #ffffff; /* 白色文字 */
+        }
+
+        td {
+            background-color: #424242; /* 深灰色單元格背景 */
+            color: #e0e0e0; /* 淺灰文字 */
+        }
+
+        /* 設定按鈕樣式 */
+        .print-button {
+            display: block;
+            width: 50px; /* 設定寬度為50px */
+            height: 30px; /* 設定高度為30px */
+            margin: 30px auto 0;
+            background-color: #ffffff; /* 白色背景 */
+            color: #424242; /* 深灰色文字 */
+            font-size: 12px; /* 小字體 */
+            text-align: center;
+            line-height: 30px; /* 使文字垂直居中 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* 按鈕懸停效果 */
+        .print-button:hover {
+            background-color: #e0e0e0; /* 懸停時顏色變化 */
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        
+        <div class="ticket">
+            <!-- 車牌照片框 -->
+            <div class="plate-image">
+                <img src="car.jpg" alt="車牌照片" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <table>
+                <tr>
+                    <th>車牌號碼</th>
+                    <td>AXN-6501</td>
+                </tr>
+                <tr>
+                    <th>開單日期</th>
+                    <td>2024-03-12 12:29:38</td>
+                </tr>
+                <tr>
+                    <th>違規地點</th>
+                    <td>台北市某路段</td>
+                </tr>
+                <tr>
+                    <th>違規時速</th>
+                    <td>70 km</td>
+                </tr>
+                <tr>
+                    <th>當地速限</th>
+                    <td>50 km</td>
+                </tr>
+                <tr>
+                    <th>車輛種類</th>
+                    <td>黑色 Toyota Altis</td>
+                </tr>
+                <tr>
+                    <th>車主姓名</th>
+                    <td>王小明</td>
+                </tr>
+                <tr>
+                    <th>車主地址</th>
+                    <td>台北市信義區某街 123 號</td>
+                </tr>
+                <tr>
+                    <th>罰緩金額</th>
+                    <td>2400</td>
+                </tr>
+                <tr>
+                    <th>繳費期限</th>
+                    <td>2024-04-12</td>
+                </tr>
+            </table>
+        </div>
+        <!-- 列印按鈕 -->
+        <button class="print-button" onclick="window.print();">列印</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辨識紀錄</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #b3b0ab;
+            padding: 10px;
+            border-radius: 0;
+            margin: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000; 
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #888;
+        }
+
+        nav a.selected {
+            background-color: #ccc;
+        }
+
+        /* New styles for logout link */
+        .logout-btn {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: blue;  /* 藍色 */
+            font-weight: normal;
+            text-decoration: underline;  /* 底線 */
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 80%;
+            margin: 80px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 500px; 
+        }
+
+        .table-container {
+            flex-grow: 1; 
+            overflow-y: auto; 
+            max-height: 300px; 
+            margin-bottom: 20px; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        table th {
+            background-color: #6d6c6c;
+            color: #ffffff;
+            font-weight: bold;
+            position: sticky; 
+            top: 0; 
+            z-index: 1; 
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f3f3f3;
+        }
+
+        table tr.selected {
+            background-color: #e0edff;
+        }
+
+        .button-container {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #6d6c6c;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border: none;
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            color: white;
+        }
+
+        .file-button {
+            padding: 8px 15px;
+            background-color: #4CAF50; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .file-button:hover {
+            background-color: #45a049; 
+        }
+
+        td {
+            text-align: center; 
+            vertical-align: middle; 
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="ai.html">辨識</a>
+        <a href="index.html">人工辨識</a>
+        <a href="cross.html" class="selected">辨識紀錄</a>
+        <!-- Added Logout link -->
+        <a href="login.html" class="logout-btn">登出</a>
+    </nav>
+
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>罰單編號</th>
+                        <th>違規照</th>
+                        <th>車牌號碼</th>
+                        <th>日期</th>
+                        <th>罰單檔案</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A01</td>
+                        <td>C:\images\...</td>
+                        <td>AFJ-8888</td>
+                        <td>2024/12/25</td>
+                        <td><a href="fine.html?file=A01" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr class="selected">
+                        <td>A02</td>
+                        <td>C:\images\...</td>
+                        <td>NPI-2523</td>
+                        <td>2024/12/26</td>
+                        <td><a href="fine.html?file=A02" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A03</td>
+                        <td>C:\images\...</td>
+                        <td>NFB-2889</td>
+                        <td>2024/12/27</td>
+                        <td><a href="fine.html?file=A03" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A04</td>
+                        <td>C:\images\...</td>
+                        <td>PKP-0876</td>
+                        <td>2024/12/28</td>
+                        <td><a href="fine.html?file=A04" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A05</td>
+                        <td>C:\images\...</td>
+                        <td>KJF-4568</td>
+                        <td>2024/12/29</td>
+                        <td><a href="fine.html?file=A05" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A06</td>
+                        <td>C:\images\...</td>
+                        <td>DCU-7833</td>
+                        <td>2024/12/30</td>
+                        <td><a href="fine.html?file=A06" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A07</td>
+                        <td>C:\images\...</td>
+                        <td>DUV-3983</td>
+                        <td>2024/12/30</td>
+                        <td><a href="fine.html?file=A06" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A08</td>
+                        <td>C:\images\...</td>
+                        <td>IJK-0987</td>
+                        <td>2024/12/30</td>
+                        <td><a href="fine.html?file=A06" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A09</td>
+                        <td>C:\images\...</td>
+                        <td>CDF-8345</td>
+                        <td>2024/12/30</td>
+                        <td><a href="fine.html?file=A06" class="file-button">檔案</a></td>
+                    </tr>
+                    <tr>
+                        <td>A10</td>
+                        <td>C:\images\...</td>
+                        <td>ERT-6537</td>
+                        <td>2024/12/30</td>
+                        <td><a href="fine.html?file=A06" class="file-button">檔案</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="button-container">
+            <button type="button" onclick="window.location.href='ai.html'">確認</button>
+        </div>
+    </div>
+
+    <script>
+        const tableRows = document.querySelectorAll('table tbody tr');
+        const confirmButton = document.getElementById('confirm-button');
+
+        tableRows.forEach(row => {
+            row.addEventListener('click', () => {
+                tableRows.forEach(r => r.classList.remove('selected'));
+                row.classList.add('selected');
+            });
+        });
+
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                links.forEach(l => l.classList.remove('selected'));
+                link.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
